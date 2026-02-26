@@ -1,4 +1,5 @@
 import sys
+from task_manager import add_task
 
 
 def main():
@@ -8,13 +9,14 @@ def main():
 
     command = sys.argv[1]
     args = sys.argv[2:]
+
     if command == "add":
         if not args:
             print('Sem argumentos')
             return
         description = ' '.join(args)
-        print("Função add será chamada")
-        print(f'Argumentos: {description}')
+        add_task(description)
+
     else:
         print("Comando inválido")
 
