@@ -1,5 +1,5 @@
 import sys
-from task_manager import add_task
+from task_manager import add_task, list_tasks
 
 
 def main():
@@ -16,7 +16,8 @@ def main():
             return
         description = ' '.join(args)
         add_task(description)
-
+    elif command == 'list':
+        list_tasks()
     else:
         print("Comando inválido")
 
