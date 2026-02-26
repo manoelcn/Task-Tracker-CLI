@@ -19,3 +19,12 @@ def add_task(description):
     tasks.append(task)
     save_tasks(tasks)
     print(f'Task added successfully (ID: {task_id})')
+
+
+def list_tasks():
+    tasks = load_tasks()
+    if not tasks:
+        print('No tasks found.')
+        return
+    for task in tasks:
+        print(f'{task['id']} - {task['description']} - {task['status']}\nCreated: {task['createdAt']}\nUpdated: {task['updatedAt']}')
