@@ -8,6 +8,8 @@ Este projeto permite adicionar, atualizar, deletar, listar e alterar o
 status de tarefas, armazenando os dados em um arquivo `tasks.json` no
 diretório atual.
 
+> Este projeto é baseado no desafio disponibilizado pelo site [roadmap.sh](https://roadmap.sh/projects/task-tracker).
+
 ------------------------------------------------------------------------
 
 ## 🚀 Funcionalidades
