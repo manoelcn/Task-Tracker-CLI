@@ -74,9 +74,5 @@ def task_delete(task_id):
     if not task:
         print('Task not found.')
         return
-    news_tasks = []
-    for t in tasks:
-        if t['id'] != task['id']:
-            news_tasks.append(t)
-    tasks = news_tasks
+    tasks = [task for task in tasks if task['id'] != task_id]
     save_tasks(tasks)
