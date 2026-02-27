@@ -29,13 +29,23 @@ def main():
             print('Sem argumentos')
             return
         description = ' '.join(args)
-        task_update(int(args[0]), description)
+        try: 
+            task_id = int(args[0])
+        except ValueError:
+            print("ID must be a number.")
+            return
+        task_update(task_id, description)
 
     if command == 'delete':
         if not args:
             print('Sem argumentos')
             return
-        task_delete(int(args[0]))
+        try: 
+            task_id = int(args[0])
+        except ValueError:
+            print("ID must be a number.")
+            return
+        task_delete(task_id)
 
     elif command == 'list':
         list_tasks()
@@ -45,14 +55,24 @@ def main():
             print('Sem argumentos')
             return
         status = 'done'
-        task_mark_status(int(args[0]), status)
+        try: 
+            task_id = int(args[0])
+        except ValueError:
+            print("ID must be a number.")
+            return
+        task_mark_status(task_id, status)
 
     elif command == 'mark-in-progress':
         if not args:
             print('Sem argumentos')
             return
         status = 'in-progress'
-        task_mark_status(int(args[0]), status)
+        try: 
+            task_id = int(args[0])
+        except ValueError:
+            print("ID must be a number.")
+            return
+        task_mark_status(task_id, status)
 
     else:
         print('Comando inválido')
