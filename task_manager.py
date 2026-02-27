@@ -1,5 +1,6 @@
-from storage import load_tasks, save_tasks
 from datetime import datetime
+
+from storage import load_tasks, save_tasks
 
 
 def add_task(description):
@@ -14,7 +15,7 @@ def add_task(description):
         'description': description,
         'status': 'todo',
         'createdAt': now,
-        'updatedAt': now
+        'updatedAt': now,
     }
     tasks.append(task)
     save_tasks(tasks)
@@ -27,7 +28,9 @@ def list_tasks():
         print('No tasks found.')
         return
     for task in tasks:
-        print(f'{task['id']} - {task['description']} - {task['status']}\nCreated: {task['createdAt']}\nUpdated: {task['updatedAt']}')
+        print(
+            f'{task["id"]} - {task["description"]} - {task["status"]}\nCreated: {task["createdAt"]}\nUpdated: {task["updatedAt"]}'
+        )
 
 
 def find_task_by_id(tasks, task_id):
@@ -73,4 +76,3 @@ def task_delete(task_id):
             news_tasks.append(t)
     tasks = news_tasks
     save_tasks(tasks)
-

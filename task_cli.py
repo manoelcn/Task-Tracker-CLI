@@ -1,5 +1,12 @@
 import sys
-from task_manager import add_task, list_tasks, task_mark_status, task_update, task_delete
+
+from task_manager import (
+    add_task,
+    list_tasks,
+    task_delete,
+    task_mark_status,
+    task_update,
+)
 
 
 def main():
@@ -10,21 +17,21 @@ def main():
     command = sys.argv[1]
     args = sys.argv[2:]
 
-    if command == "add":
+    if command == 'add':
         if not args:
             print('Sem argumentos')
             return
         description = ' '.join(args)
         add_task(description)
 
-    if command == "update":
+    if command == 'update':
         if not args:
             print('Sem argumentos')
             return
         description = ' '.join(args)
-        task_update(int(args[0]) ,description)
+        task_update(int(args[0]), description)
 
-    if command == "delete":
+    if command == 'delete':
         if not args:
             print('Sem argumentos')
             return
@@ -48,7 +55,8 @@ def main():
         task_mark_status(int(args[0]), status)
 
     else:
-        print("Comando inválido")
+        print('Comando inválido')
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     main()
