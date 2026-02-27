@@ -37,13 +37,13 @@ def find_task_by_id(tasks, task_id):
     return None
 
 
-def task_mark_done(task_id):
+def task_mark_status(task_id, status):
     tasks = load_tasks()
     task = find_task_by_id(tasks, task_id)
     if not task:
         print('Task not found.')
         return
     now = datetime.now().isoformat()
-    task['status'] = 'done'
+    task['status'] = status
     task['updatedAt'] = now
     save_tasks(tasks)
