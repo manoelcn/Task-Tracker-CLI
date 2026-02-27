@@ -28,10 +28,10 @@ def list_tasks():
         print('No tasks found.')
         return
     for task in tasks:
-        print(
-            f'{task["id"]} - {task["description"]} - {task["status"]}\nCreated: {task["createdAt"]}\nUpdated: {task["updatedAt"]}'
-        )
-
+        print(f'{task["id"]} - {task["description"]} - {task["status"]}')
+        print(f'Created: {task["createdAt"]}')
+        print(f'Updated: {task["updatedAt"]}')
+        print("-" * 40)
 
 def find_task_by_id(tasks, task_id):
     for task in tasks:
