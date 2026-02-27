@@ -1,5 +1,5 @@
 import sys
-from task_manager import add_task, list_tasks, task_mark_status, task_update
+from task_manager import add_task, list_tasks, task_mark_status, task_update, task_delete
 
 
 def main():
@@ -23,6 +23,12 @@ def main():
             return
         description = ' '.join(args)
         task_update(int(args[0]) ,description)
+
+    if command == "delete":
+        if not args:
+            print('Sem argumentos')
+            return
+        task_delete(int(args[0]))
 
     elif command == 'list':
         list_tasks()
