@@ -1,5 +1,5 @@
 import sys
-from task_manager import add_task, list_tasks, task_mark_done
+from task_manager import add_task, list_tasks, task_mark_status
 
 
 def main():
@@ -24,7 +24,15 @@ def main():
         if not args:
             print('Sem argumentos')
             return
-        task_mark_done(int(args[0]))
+        status = 'done'
+        task_mark_status(int(args[0]), status)
+
+    elif command == 'mark-in-progress':
+        if not args:
+            print('Sem argumentos')
+            return
+        status = 'in-progress'
+        task_mark_status(int(args[0]), status)
 
     else:
         print("Comando inválido")
