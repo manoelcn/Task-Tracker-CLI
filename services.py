@@ -4,6 +4,9 @@ from storage import load_tasks, save_tasks
 
 
 def add_task(description):
+    if not description.strip():
+        print('Description cannot be empty.')
+        return
     tasks = load_tasks()
     task_id = max((task['id'] for task in tasks), default=0) + 1
     now = datetime.now().isoformat()
