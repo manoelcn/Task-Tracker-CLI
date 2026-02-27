@@ -59,3 +59,18 @@ def task_update(task_id, description):
     task['description'] = description
     task['updatedAt'] = now
     save_tasks(tasks)
+
+
+def task_delete(task_id):
+    tasks = load_tasks()
+    task = find_task_by_id(tasks, task_id)
+    if not task:
+        print('Task not found.')
+        return
+    news_tasks = []
+    for t in tasks:
+        if t['id'] != task['id']:
+            news_tasks.append(t)
+    tasks = news_tasks
+    save_tasks(tasks)
+
