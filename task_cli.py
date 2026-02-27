@@ -1,5 +1,5 @@
 import sys
-from task_manager import add_task, list_tasks
+from task_manager import add_task, list_tasks, task_mark_done
 
 
 def main():
@@ -16,11 +16,18 @@ def main():
             return
         description = ' '.join(args)
         add_task(description)
+
     elif command == 'list':
         list_tasks()
+
+    elif command == 'mark-done':
+        if not args:
+            print('Sem argumentos')
+            return
+        task_mark_done(int(args[0]))
+
     else:
         print("Comando inválido")
-
 
 if __name__ == "__main__":
     main()
