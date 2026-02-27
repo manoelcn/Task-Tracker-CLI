@@ -12,7 +12,7 @@ def add_task(description):
     task = {
         'id': task_id,
         'description': description,
-        'status': 'in-progress',
+        'status': 'todo',
         'createdAt': now,
         'updatedAt': now
     }
