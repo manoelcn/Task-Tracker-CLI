@@ -5,10 +5,7 @@ from storage import load_tasks, save_tasks
 
 def add_task(description):
     tasks = load_tasks()
-    if tasks:
-        task_id = max(task['id'] for task in tasks) + 1
-    else:
-        task_id = 1
+    task_id = max((task['id'] for task in tasks), default=0) + 1
     now = datetime.now().isoformat()
     task = {
         'id': task_id,
