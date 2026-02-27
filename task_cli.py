@@ -8,10 +8,22 @@ from services import (
     task_update,
 )
 
+HELP_MESSAGE = """
+Task Tracker CLI - List of Commands:
+
+Commands:
+  add <descrição>             Add a new task
+  update <id> <descrição>     Update the description of an existing task
+  delete <id>                 Delete a task
+  mark-in-progress <id>       Mark a task as in progress
+  mark-done <id>              Mark a task as completed
+  list                        List all tasks
+  --help                      Display this help message
+"""
 
 def main():
-    if len(sys.argv) <= 1:
-        print('No command was given.')
+    if len(sys.argv) <= 1 or sys.argv[1] == '--help':
+        print(HELP_MESSAGE)
         return
 
     command = sys.argv[1]
@@ -75,7 +87,7 @@ def main():
         task_mark_status(task_id, status)
 
     else:
-        print('Invalid command.')
+        print(HELP_MESSAGE)
 
 
 if __name__ == '__main__':
