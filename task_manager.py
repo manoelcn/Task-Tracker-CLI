@@ -28,3 +28,10 @@ def list_tasks():
         return
     for task in tasks:
         print(f'{task['id']} - {task['description']} - {task['status']}\nCreated: {task['createdAt']}\nUpdated: {task['updatedAt']}')
+
+
+def find_task_by_id(tasks, task_id):
+    for task in tasks:
+        if task['id'] == task_id:
+            return task
+    return None
