@@ -24,7 +24,7 @@ def main():
         description = ' '.join(args)
         add_task(description)
 
-    if command == 'update':
+    elif command == 'update':
         if not args:
             print('Sem argumentos')
             return
@@ -36,7 +36,7 @@ def main():
             return
         task_update(task_id, description)
 
-    if command == 'delete':
+    elif command == 'delete':
         if not args:
             print('Sem argumentos')
             return
