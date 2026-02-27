@@ -11,7 +11,7 @@ from services import (
 
 def main():
     if len(sys.argv) <= 1:
-        print('Nenhum comando foi informado.')
+        print('No command was given.')
         return
 
     command = sys.argv[1]
@@ -19,14 +19,14 @@ def main():
 
     if command == 'add':
         if not args:
-            print('Sem argumentos')
+            print('Please provide a description for the task.')
             return
         description = ' '.join(args)
         add_task(description)
 
     elif command == 'update':
         if not args:
-            print('Sem argumentos')
+            print('Please provide a task ID.')
             return
         description = ' '.join(args)
         try: 
@@ -38,7 +38,7 @@ def main():
 
     elif command == 'delete':
         if not args:
-            print('Sem argumentos')
+            print('Please provide a task ID.')
             return
         try: 
             task_id = int(args[0])
@@ -52,7 +52,7 @@ def main():
 
     elif command == 'mark-done':
         if not args:
-            print('Sem argumentos')
+            print('Please provide a task ID.')
             return
         status = 'done'
         try: 
@@ -64,7 +64,7 @@ def main():
 
     elif command == 'mark-in-progress':
         if not args:
-            print('Sem argumentos')
+            print('Please provide a task ID.')
             return
         status = 'in-progress'
         try: 
@@ -75,7 +75,7 @@ def main():
         task_mark_status(task_id, status)
 
     else:
-        print('Comando inválido')
+        print('Invalid command.')
 
 
 if __name__ == '__main__':
