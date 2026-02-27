@@ -41,6 +41,10 @@ def find_task_by_id(tasks, task_id):
 
 
 def task_mark_status(task_id, status):
+    allowed_status = {'todo', 'in-progress', 'done'}
+    if status not in allowed_status:
+        print('Invalid status.')
+        return
     tasks = load_tasks()
     task = find_task_by_id(tasks, task_id)
     if not task:
