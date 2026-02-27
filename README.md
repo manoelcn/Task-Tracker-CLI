@@ -53,6 +53,10 @@ No terminal, dentro da pasta do projeto:
 
     python task_cli.py <comando> [argumentos]
 
+Ou para ver a lista de comandos do projeto:
+
+    python task_cli.py --help
+
 ------------------------------------------------------------------------
 
 ## 📌 Comandos Disponíveis
